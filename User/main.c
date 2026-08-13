@@ -73,6 +73,8 @@ static void jump_to_app(void)
     
     /* 跳转到APP */
     app_entry();
+
+    
     
     /* 不会返回到这里 */
 }
