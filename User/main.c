@@ -43,13 +43,15 @@ static void jump_to_app(void)
     
     /* 关闭全局中断 */
     __disable_irq();
+
+    
     
     /* 关闭所有外设中断（STM32F10x SPL v3.5.0 无 NVIC_DeInit，直接操作寄存器） */
     NVIC->ICER[0] = 0xFFFFFFFF;
     NVIC->ICER[1] = 0xFFFFFFFF;
     NVIC->ICER[2] = 0xFFFFFFFF;
 
-    
+
     
     /* 关闭SysTick */
     SysTick->CTRL = 0;
